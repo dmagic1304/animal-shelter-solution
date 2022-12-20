@@ -1,3 +1,19 @@
 @{
   Layout = "_Layout";
 }
+
+@model AnimalShelter.Models.Animal
+
+<h4>Register An Animal</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    @Html.LabelFor(model => model.Breed)
+    @Html.TextBoxFor(model => model.Breed)
+    @Html.LabelFor(model => model.Type)
+    @Html.TextBoxFor(model => model.Type)
+    @Html.LabelFor(model => model.Admission)
+    @Html.TextBoxFor(model => model.Admission, "{0:yyyy-MM-dd}", new { @class = "dateInput", @placeholder = "plz input date" })
+    <input type="submit" value="Register" />
+}
